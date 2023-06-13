@@ -19,14 +19,14 @@ class TestImportParts(unittest.TestCase):
         assert len(inventory.aliases) == 8, f'Expected 8 aliases, found {len(inventory.aliases)}: {inventory.aliases}'
         assert len(inventory.files) == 4, \
             f'Expected 4 files, found {len(inventory.files)}: {[f.path for f in inventory.files]}'
-        pkg = 'https://github.com/iGEM-Engineering/iGEM-distribution/test_package/'
+        pkg = 'https://github.com/iGEM-Engineering/iGEM-test-distribution-package/test_package/'
         expected = {f'{pkg}NM_005341_4': f'{pkg}NM_005341_4',
                     f'{pkg}NM_005342': f'{pkg}NM_005342',
                     f'{pkg}NM_005342_4': f'{pkg}NM_005342',
                     f'{pkg}NM_005343': f'{pkg}NM_005343',
                     f'{pkg}NM_005343_4': f'{pkg}NM_005343',
-                    'https://github.com/iGEM-Engineering/iGEM-distribution/test_package/J23102_modified':
-                        'https://github.com/iGEM-Engineering/iGEM-distribution/test_package/J23102_modified',
+                    'https://github.com/iGEM-Engineering/iGEM-test-distribution-package/test_package/J23102_modified':
+                        'https://github.com/iGEM-Engineering/iGEM-test-distribution-package/test_package/J23102_modified',
                     'https://synbiohub.org/public/igem/BBa_J23101': 'https://synbiohub.org/public/igem/BBa_J23101',
                     'http://parts.igem.org/J23101': 'https://synbiohub.org/public/igem/BBa_J23101'}
         assert inventory.aliases == expected, f'Inventory aliases do not match expected value: {inventory.aliases}'
@@ -70,7 +70,7 @@ class TestImportParts(unittest.TestCase):
         retrieved = part_retrieval.import_parts(tmp_sub)
         # assert len(retrieved) == 7  # all but the local file and LCP SynBioHub
         github_prefix = ('https://raw.githubusercontent.com/'
-                         'iGEM-Engineering/iGEM-distribution/develop/scripts/test/test_files')
+                         'iGEM-Engineering/iGEM-test-distribution-package/develop/scripts/test/test_files')
         expected = ['https://www.ncbi.nlm.nih.gov/nuccore/JWYZ01000115_1',  # NCBI
                     'http://parts.igem.org/BBa_J364007',  # iGEM FASTA
                     'http://parts.igem.org/J23100',  # iGEM SynBioHub
